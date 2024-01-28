@@ -3,16 +3,22 @@ from sklearn.metrics import accuracy_score
 from django.shortcuts import render
 from public.algorithm.svm import SVM
 from public.algorithm.rf import RandomForest
-
+from django.shortcuts import redirect
 
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 
-
+def login_view(request):
+    if request.method == 'POST':
+        # Add your form validation logic here
+        return redirect('calculate')  # Redirect to the 'predict' URL
+    return render(request, 'login.html')
 def home(request):
     return render(request, 'home.html')
-
+def calculate(request):
+    # Your predict page logic here
+    return render(request, 'calculate.html')
 
 def about(request):
     return render(request, 'about.html')

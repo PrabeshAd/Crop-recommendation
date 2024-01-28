@@ -27,6 +27,9 @@ urlpatterns = [
     path("descsvm", views.descsvm, name="descsvm"),
     path("descrf", views.descrf, name="descrf"),
     path("figures", views.figures, name="figures"),
+    path('login/', views.login_view, name='login'),
+
+
 
 
 
